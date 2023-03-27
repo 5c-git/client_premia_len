@@ -221,6 +221,7 @@ a:hover {
     position: absolute;
     top: 93.4%;
     width: 50px;
+    height: 50px;
     z-index: 10;
     cursor: pointer;
     display: flex;
@@ -690,8 +691,8 @@ a:hover {
 .cards {
     display: flex;
     grid-gap: 20px;
-    padding-top: 80px;
-    padding-bottom: 50px;
+    padding-top: 80px !important;
+    padding-bottom: 50px !important;
 }
 
 .cards-item {
@@ -700,7 +701,7 @@ a:hover {
     border: 0;
     border-radius: 30px;
     padding: 15px;
-    margin-bottom: 30px;
+    height: 100%;
 }
 
 .cards-item__badge {
@@ -728,6 +729,7 @@ a:hover {
     max-width: 100%;
     height: auto;
     margin: 25px;
+    object-fit: contain;
 }
 
 .cards-item__title {
