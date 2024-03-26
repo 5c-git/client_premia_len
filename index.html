@@ -1,699 +1,948 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Программа лояльности "Премия"</title>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Программа лояльности "Премия"</title>
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon" />
 
-  <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <!-- <link rel="stylesheet" href="./assets/css/base.css" /> -->
+    <link rel="stylesheet" href="./assets/css/choices.css" />
+    <link href="./assets/css/styles.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-  <link href="./assets/css/styles.css" rel="stylesheet">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
 
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript" >
+        m[i].l = 1 * new Date();
 
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  
-    m[i].l=1*new Date();
-  
-    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-  
-    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-  
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-  
-    ym(57265216, "init", {
-    
-          clickmap:true,
-    
-          trackLinks:true,
-    
-          accurateTrackBounce:true
-    
-    });
-  
-  </script>
-  
-  <noscript><div><img src="https://mc.yandex.ru/watch/57265216" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
 
-  <!-- /Yandex.Metrika counter -->
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js",
+        "ym"
+      );
 
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=1e128840-e153-48c0-922b-aba84ce5d0fb" type="text/javascript"></script>
-</head>
+      ym(57265216, "init", {
+        clickmap: true,
 
-<body class="container-body" id="container-body">
+        trackLinks: true,
 
-  <div class="mobile-nav" id="mobile-nav">
-    <button class="mobile-menu-close" id="mobile-menu-close-button">
-      <img src="./assets/img/svg/menu-close.svg" alt="Close" />
-    </button>
-    <ul class="nav _nav--mobile">
-      <li class="nav__item"><a class="nav__link" href="#about">О программе</a></li>
-      <li class="nav__item"><a class="nav__link" href="#app">Приложение</a></li>
-      <li class="nav__item"><a class="nav__link" href="#sales">Акции</a></li>
-      <li class="nav__item"><a class="nav__link" href="#shops">Магазины</a></li>
-      <li class="nav__item"><a class="nav__link" href="#faq">FAQ</a></li>
-    </ul>
-  </div>
+        accurateTrackBounce: true,
+      });
+    </script>
 
-  <div class="header">
-    <div class="container">
-      <a href="/" class="logo">
-        <img src="./assets/img/svg/logo/logo.svg" class="logo__image" alt="logo">
-      </a>
-      <button class="mobile-menu-icon" id="mobile-menu-icon">
-        <img src="./assets/img/svg/menu.svg" alt="Menu" />
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/57265216"
+          style="position: absolute; left: -9999px"
+          alt=""
+        /></div
+    ></noscript>
+
+    <!-- /Yandex.Metrika counter -->
+
+    <script
+      src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=1e128840-e153-48c0-922b-aba84ce5d0fb"
+      type="text/javascript"
+    ></script>
+  </head>
+
+  <body class="container-body" id="container-body">
+    <div class="mobile-nav" id="mobile-nav">
+      <button class="mobile-menu-close" id="mobile-menu-close-button">
+        <img src="./assets/img/svg/menu-close.svg" alt="Close" />
       </button>
-      <ul class="nav">
-        <li class="nav__item"><a class="nav__link" href="#about">О программе</a></li>
-        <li class="nav__item"><a class="nav__link" href="#app">Приложение</a></li>
+      <ul class="nav _nav--mobile">
+        <li class="nav__item">
+          <a class="nav__link" href="#about">О программе</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#app">Приложение</a>
+        </li>
         <li class="nav__item"><a class="nav__link" href="#sales">Акции</a></li>
-        <li class="nav__item"><a class="nav__link" href="#shops">Магазины</a></li>
+        <li class="nav__item">
+          <a class="nav__link" href="#shops">Магазины</a>
+        </li>
         <li class="nav__item"><a class="nav__link" href="#faq">FAQ</a></li>
       </ul>
     </div>
-  </div>
 
-  <section class="slider-section">
-    <img class="slider-pattern" src="./assets/img/svg/slider/pattern.svg" alt="">
-    <div class="container">
-
-      <div class="slider swiper banner-slider">
-        <div class="swiper-wrapper">
-
-          <div class="swiper-slide">
-            <div class="slider-item">
-              <div class="slider-item__content">
-                <div class="slider-item__date">с 6 сентября по 15 сентября</div>
-                <h1 class="slider-item__title">В самом расцвете кожуры!</h1>
-                <div class="slider-item__text">Узнайте как бананы сохраняют свою свежесть после длительного путешествия из тропиков в Россию</div>
-                <a href="#" class="slider-item__button">Подробнее</a>
-              </div>
-              <div class="slider-item__image">
-                <span class="slider-item__label">
-                  <span class="slider-item__label-old">
-                    399 ₽
-                  </span>
-                  239 ₽
-                </span>
-                <img src="./assets/img/svg/slider/banana.svg" alt="Banana" />
-              </div>
-            </div>
-          </div>
-          
-          <div class="swiper-slide">
-            <div class="slider-item">
-              <div class="slider-item__content">
-                <div class="slider-item__date">
-                  с 6 сентября по 15 сентября
-                </div>
-                <h1 class="slider-item__title">В самом расцвете кожуры!</h1>
-                <div class="slider-item__text">Узнайте как бананы сохраняют свою свежесть после длительного путешествия из тропиков в Россию</div>
-                <a href="#" class="slider-item__button">Подробнее</a>
-              </div>
-              <div class="slider-item__image">
-                <span class="slider-item__label">
-                  <span class="slider-item__label-old">
-                    399 ₽
-                  </span>
-                  239 ₽
-                </span>
-                <img src="./assets/img/svg/slider/banana.svg" alt="Banana" />
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="slider-item">
-              <div class="slider-item__content">
-                <div class="slider-item__date">с 6 сентября по 15 сентября</div>
-                <h1 class="slider-item__title">В самом расцвете кожуры!</h1>
-                <div class="slider-item__text">Узнайте как бананы сохраняют свою свежесть после длительного путешествия из тропиков в Россию</div>
-                <a href="#" class="slider-item__button">Подробнее</a>
-              </div>
-              <div class="slider-item__image">
-                <span class="slider-item__label">
-                  <span class="slider-item__label-old">
-                    399 ₽
-                  </span>
-                  239 ₽
-                </span>
-                <img src="./assets/img/svg/slider/banana.svg" alt="Banana" />
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next">
-          <svg viewBox="0 0 48 48">
-            <circle cx="24" cy="24" r="20"></circle>
-          </svg>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="loyal-section" id="about">
-    <div class="container">
-      <div class="loyal">
-        <div class="loyal-item">
-          <div class="loyal-item__description">О программе лояльности</div>
-        </div>
-        <div class="loyal-item">
-          <div class="loyal-item__content">
-            <h2 class="loyal-item__title">Больше покупаешь, больше премии получаешь!</h2>
-          </div>
-          <div class="loyal-item__image">
-            <img src="./assets/img/svg/loyal/exchange.svg" alt="exchange">
-          </div>
-        </div>
-
-        <div class="loyal-item">
-          <div class="loyal-item__content-card">
-
-            <div class="loyal-item__card-1">
-              <div class="loyal-item__card-container">
-                <div class="loyal-item__card-icon"><img src="./assets/img/svg/loyal/1.svg"></div>
-                <div class="loyal-item__card-title">Просто так</div>
-              </div>
-              <div class="loyal-item__card-container">
-                <div class="loyal-item__card-description">С первой покупки</div>
-              </div>
-            </div>
-
-            <div class="loyal-item__card-2">
-              <div class="loyal-item__card-container">
-                <div class="loyal-item__card-icon"><img src="./assets/img/svg/loyal/2.svg"></div>
-                <div class="loyal-item__card-title">Для друзей</div>
-              </div>
-              <div class="loyal-item__card-container">
-                <div class="loyal-item__card-description">
-                  от 3 000
-                  <img src="./assets/img/svg/loyal/ruble.svg" alt="">
-                </div>
-              </div>
-            </div>
-
-            <div class="loyal-item__card-3">
-              <div class="loyal-item__card-container">
-                <div class="loyal-item__card-icon"><img src="./assets/img/svg/loyal/3.svg"></div>
-                <div class="loyal-item__card-title">С любовью</div>
-              </div>
-              <div class="loyal-item__card-container">
-                <div class="loyal-item__card-description">
-                  от 7 000
-                  <img src="./assets/img/svg/loyal/ruble.svg" alt="">
-                </div>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-      <div class="loyal-footer">
-        <div class="loyal-footer__description">Статусная система от суммы покупок в месяц</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="app-section" id="app">
-    <div class="container">
-      <div class="app">
-        <div class="app-item__content">
-          <h3 class="app-item__title">Виртуальная карта в&nbsp;твоем телефоне</h3>
-          <div class="app-item__text">Скачивай мобильное приложение</div>
-          <div class="app-item__buttons">
-            <a href='https://apps.apple.com/ru/app/премия-программа-лояльности/id1490568015'>
-              <img alt="" src='assets/img/svg/apps/logo-app-store.svg'/>
-            </a>
-            <a href='https://play.google.com/store/apps/details?id=com.premialoyalty&pli=1&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-              <img alt="" src='assets/img/svg/apps/logo-google-play.svg'/>
-            </a>
-            <a href='#'>
-              <img alt="" src='assets/img/svg/apps/logo-app-gallery.svg'/>
-            </a>
-          </div>
-        </div>
-        <div class="app-item__image"><img src="./assets/img/mobile_qr.png"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="app-banner-section">
-    <div class="container-xl">
-      <div class="app-banner">
-        <div class="app-banner__text">Выбирай свой набор привилегий</div>
-      </div>
-      <img src="assets/img/phone.svg" class="app-banner__img" alt="">
-    </div>
-  </section>
-
-  <section class="products-section" id="sales">
-    <div class="container">
-
-      <div class="products">
-
-        <div class="products-content">
-
-          <div class="swiper product-slider cards">
-
-            <div class="products-logo">
-              <img src="./assets/img/svg/logo/yar.svg" alt="">
-            </div>
-            
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide">
-                <div class="cards-item">
-                  <div class="cards-item__image">
-                    <div class="cards-item__badge">Скидка -13%</div>
-                    <img src="./assets/img/products/1.png" alt="">
-                  </div>
-                  <div class="cards-item__title">Шоколад молочный Organic Chocolate с жареным кокосом 32%, 100г Шоколад молочный Organic Chocolate с жареным кокосом 32%, 100г</div>
-                  <div class="cards-item__old-price">219,99 ₽</div>
-                  <div class="cards-item__price">99,99 ₽</div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="cards-item">
-                  <div class="cards-item__image">
-                    <div class="cards-item__badge">Скидка -13%</div>
-                    <img src="./assets/img/products/1.png" alt="">
-                  </div>
-                  <div class="cards-item__title">Шоколад молочный Organic Chocolate с жареным кокосом 32%, 100г</div>
-                  <div class="cards-item__old-price">219,99 ₽</div>
-                  <div class="cards-item__price">99,99 ₽</div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="cards-item">
-                  <div class="cards-item__image">
-                    <div class="cards-item__badge">Скидка -13%</div>
-                    <img src="./assets/img/products/1.png" alt="">
-                  </div>
-                  <div class="cards-item__title">Шоколад молочный Organic Chocolate с жареным кокосом 32%, 100г</div>
-                  <div class="cards-item__old-price">219,99 ₽</div>
-                  <div class="cards-item__price">99,99 ₽</div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="cards-item">
-                  <div class="cards-item__image">
-                    <div class="cards-item__badge">Скидка -13%</div>
-                    <img src="./assets/img/products/1.png" alt="">
-                  </div>
-                  <div class="cards-item__title">Шоколад молочный Organic Chocolate с жареным кокосом 32%, 100г</div>
-                  <div class="cards-item__old-price">219,99 ₽</div>
-                  <div class="cards-item__price">99,99 ₽</div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="cards-item">
-                  <div class="cards-item__image">
-                    <div class="cards-item__badge">Скидка -13%</div>
-                    <img src="./assets/img/products/1.png" alt="">
-                  </div>
-                  <div class="cards-item__title">Шоколад молочный Organic Chocolate с жареным кокосом 32%, 100г</div>
-                  <div class="cards-item__old-price">219,99 ₽</div>
-                  <div class="cards-item__price">99,99 ₽</div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="cards-item">
-                  <div class="cards-item__image">
-                    <div class="cards-item__badge">Скидка -13%</div>
-                    <img src="./assets/img/products/1.png" alt="">
-                  </div>
-                  <div class="cards-item__title">Шоколад молочный Organic Chocolate с жареным кокосом 32%, 100г</div>
-                  <div class="cards-item__old-price">219,99 ₽</div>
-                  <div class="cards-item__price">99,99 ₽</div>
-                </div>
-              </div>
-
-            </div>
-              <div class="swiper-scrollbar"></div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-          </div>
-          
-        </div>
-      </div>
-
-      <div class="products">
-        <div class="products-content">
-
-
-          <div class="swiper product-slider cards">
-
-            <div class="products-logo">
-              <img src="./assets/img/svg/logo/baton.svg" alt="">
-            </div>
-
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide">
-                <div class="cards-item">
-                  <div class="cards-item__image">
-                    <div class="cards-item__badge">Скидка -13%</div>
-                    <img src="./assets/img/products/1.png" alt="">
-                  </div>
-                  <div class="cards-item__title">Шоколад молочный Organic Chocolate с жареным кокосом 32%, 100г</div>
-                  <div class="cards-item__old-price">219,99 ₽</div>
-                  <div class="cards-item__price">99,99 ₽</div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="cards-item">
-                  <div class="cards-item__image">
-                    <div class="cards-item__badge">Скидка -13%</div>
-                    <img src="./assets/img/products/1.png" alt="">
-                  </div>
-                  <div class="cards-item__title">Шоколад молочный Organic Chocolate с жареным кокосом 32%, 100г Шоколад молочный Organic Chocolate с жареным кокосом 32%, 100г</div>
-                  <div class="cards-item__old-price">219,99 ₽</div>
-                  <div class="cards-item__price">99,99 ₽</div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="cards-item">
-                  <div class="cards-item__image">
-                    <div class="cards-item__badge">Скидка -13%</div>
-                    <img src="./assets/img/products/1.png" alt="">
-                  </div>
-                  <div class="cards-item__title">Шоколад молочный Organic Chocolate с жареным кокосом 32%, 100г</div>
-                  <div class="cards-item__old-price">219,99 ₽</div>
-                  <div class="cards-item__price">99,99 ₽</div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="cards-item">
-                  <div class="cards-item__image">
-                    <div class="cards-item__badge">Скидка -13%</div>
-                    <img src="./assets/img/products/1.png" alt="">
-                  </div>
-                  <div class="cards-item__title">Шоколад молочный Organic Chocolate с жареным кокосом 32%, 100г</div>
-                  <div class="cards-item__old-price">219,99 ₽</div>
-                  <div class="cards-item__price">99,99 ₽</div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="cards-item">
-                  <div class="cards-item__image">
-                    <div class="cards-item__badge">Скидка -13%</div>
-                    <img src="./assets/img/products/1.png" alt="">
-                  </div>
-                  <div class="cards-item__title">Шоколад молочный Organic Chocolate с жареным кокосом 32%, 100г</div>
-                  <div class="cards-item__old-price">219,99 ₽</div>
-                  <div class="cards-item__price">99,99 ₽</div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="cards-item">
-                  <div class="cards-item__image">
-                    <div class="cards-item__badge">Скидка -13%</div>
-                    <img src="./assets/img/products/1.png" alt="">
-                  </div>
-                  <div class="cards-item__title">Шоколад молочный Organic Chocolate с жареным кокосом 32%, 100г</div>
-                  <div class="cards-item__old-price">219,99 ₽</div>
-                  <div class="cards-item__price">99,99 ₽</div>
-                </div>
-              </div>
-
-            </div>
-              <div class="swiper-scrollbar"></div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-          </div> 
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="banner-section">
-    <div class="container">
-      <div class="banner">
-        <div class="banner-content">
-          <div class="banner-text">Сплочённость команды профессионалов бодрит</div>
-          <a href="" class="banner-bottom">Подробнее</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="maps-section" id="shops">
-    <div class="container">
-      <div class="block-title">Магазины</div>
-    </div>
-    <div class="maps">
-      <div class="maps-content" id="map">
-      </div>
-    </div>
-  </section>
-
-  <section class="questions-section" id="faq">
-    <div class="container">
-      <div class="block-title">Часто задаваемые вопросы</div>
-
-          <div class="tabs">
-            <div class="tabs__nav">
-              <button class="tabs__btn tabs__btn_active">Программа лояльности</button>
-              <button class="tabs__btn">Карта</button>
-              <button class="tabs__btn">Бонусы</button>
-              <button class="tabs__btn">Предложения</button>
-            </div>
-            <div class="tabs__content">
-              <div class="tabs__pane tabs__pane_show">
-                <div class="accordion" id="accordion-1">
-                  <div class="accordion__item accordion__item_show">
-                    <div class="accordion__header">
-                      Пункт 1.1
-                    </div>
-                    <div class="accordion__body">
-                      <div class="accordion__content">Текст пункта</div>
-                    </div>
-                  </div>
-                  <div class="accordion__item">
-                    <div class="accordion__header">
-                      Пункт 1.2
-                    </div>
-                    <div class="accordion__body">
-                      <div class="accordion__content">Текст пункта</div>
-                    </div>
-                  </div>
-                  <div class="accordion__item">
-                    <div class="accordion__header">
-                      Пункт 1.3
-                    </div>
-                    <div class="accordion__body">
-                      <div class="accordion__content">Текст пункта</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tabs__pane">
-                <div class="accordion" id="accordion-2">
-                  <div class="accordion__item accordion__item_show">
-                    <div class="accordion__header">
-                      Пункт 2.1
-                    </div>
-                    <div class="accordion__body">
-                     <div class="accordion__content">Текст пункта</div>
-                    </div>
-                  </div>
-                  <div class="accordion__item">
-                    <div class="accordion__header">
-                      Пункт 2.2
-                    </div>
-                    <div class="accordion__body">
-                     <div class="accordion__content">Текст пункта</div>
-                    </div>
-                  </div>
-                  <div class="accordion__item">
-                    <div class="accordion__header">
-                      Пункт 2.3
-                    </div>
-                    <div class="accordion__body">
-                     <div class="accordion__content">Текст пункта</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tabs__pane">
-                <div class="accordion" id="accordion-3">
-                  <div class="accordion__item accordion__item_show">
-                    <div class="accordion__header">
-                      Пункт 3.1
-                    </div>
-                    <div class="accordion__body">
-                     <div class="accordion__content">Текст пункта</div>
-                    </div>
-                  </div>
-                  <div class="accordion__item">
-                    <div class="accordion__header">
-                      Пункт 3.2
-                    </div>
-                    <div class="accordion__body">
-                     <div class="accordion__content">Текст пункта</div>
-                    </div>
-                  </div>
-                  <div class="accordion__item">
-                    <div class="accordion__header">
-                      Пункт 3.3
-                    </div>
-                    <div class="accordion__body">
-                     <div class="accordion__content">Текст пункта</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tabs__pane">
-                <div class="accordion" id="accordion-4">
-                  <div class="accordion__item accordion__item_show">
-                    <div class="accordion__header">
-                      Пункт 4.1
-                    </div>
-                    <div class="accordion__body">
-                     <div class="accordion__content">Текст пункта</div>
-                    </div>
-                  </div>
-                  <div class="accordion__item">
-                    <div class="accordion__header">
-                      Пункт 4.2
-                    </div>
-                    <div class="accordion__body">
-                     <div class="accordion__content">Текст пункта</div>
-                    </div>
-                  </div>
-                  <div class="accordion__item">
-                    <div class="accordion__header">
-                      Пункт 4.3
-                    </div>
-                    <div class="accordion__body">
-                     <div class="accordion__content">Текст пункта</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-      </div>
-    </div>
-  </section>
-
-  <div class="container">
-    <hr class="divider">
-  </div>
-
-  <section class="info-section">
-    <div class="container">
-      <div class="info">
-        <div class="info-content">
-          <img src="assets/img/svg/logo/logo-dark.svg" class="info__logo" alt="">
-          <p class="info-text__description">Служба поддержки</p>
-          <div class="info-text__phone">8-800-775-89-50</div>
-          <div class="info-menu">
-            <a href="#" class="info-menu__link">Правила участия в программе лояльности</a>
-            <a href="#" class="info-menu__link">Политика конфиденциальности</a>
-            <a href="#" class="info-menu__link">Пользовательское соглашение</a>
-          </div>
-        </div>
-        <div class="info-content">
-          <div class="info-columns">
-            <div class="info-column__item">
-              <img src="assets/img/svg/logo/yar.svg" class="info-column__item-logo" alt="">
-              <div class="socials">
-                <ul class="social-content">
-                  <li>
-                    <a href="">
-                      <img src="assets/img/svg/social/tg.svg">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <img src="assets/img/svg/social/vk.svg">
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="info-column__item">
-              <img src="assets/img/svg/logo/baton.svg" class="info-column__item-logo" alt="">
-              <div class="socials">
-                <ul class="social-content">
-                  <li>
-                    <a href="">
-                      <img src="assets/img/svg/social/tg.svg">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <img src="assets/img/svg/social/vk.svg">
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="info-title">Наше приложение</div>
-          <p class="info-description">Всегда под рукой: акции, поиск ближайшего магазина, связь с нами и виртуальная карта лояльности.</p>
-          <div class="info-app__buttons">
-            <a href="#">
-              <img alt="" src='assets/img/svg/apps/logo-app-store.svg'/>
-            </a>
-            <a href="#">
-              <img alt="" src='assets/img/svg/apps/logo-google-play.svg'/>
-            </a>
-            <a href="#">
-              <img alt="" src='assets/img/svg/apps/logo-app-gallery.svg'/>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-content__item">
-        <div class="footer-copyright">
-          © Официальный сайт программы лояльности «Премия»
-        </div>
-      </div>
-      <div class="footer-content__item">
-        <a class="footer-link">
-          Следим за ценами с <img src="assets/img/svg/logo/5uglov.svg" alt="">
+    <div class="header">
+      <div class="container">
+        <a href="/" class="logo">
+          <img
+            src="./assets/img/svg/logo/logo.svg"
+            class="logo__image"
+            alt="logo"
+          />
         </a>
+        <button class="mobile-menu-icon" id="mobile-menu-icon">
+          <img src="./assets/img/svg/menu.svg" alt="Menu" />
+        </button>
+        <ul class="nav">
+          <li class="nav__item">
+            <a class="nav__link" href="#about">О программе</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#app">Приложение</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#sales">Акции</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#shops">Магазины</a>
+          </li>
+          <li class="nav__item"><a class="nav__link" href="#faq">FAQ</a></li>
+        </ul>
+
+        <button class="nav__register" type="button">
+          <span>Регистрация</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 nav__register-icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+            />
+          </svg>
+        </button>
       </div>
     </div>
-  </div>
-</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="./assets/js/sliders.js"></script>
-<script src="./assets/js/menu.js"></script>
-<script src="./assets/js/maps.js"></script>
-<script src="./assets/js/tabs.js"></script>
-<script src="./assets/js/accordion.js"></script>
+    <section class="slider-section">
+      <img
+        class="slider-pattern"
+        src="./assets/img/svg/slider/pattern.svg"
+        alt=""
+      />
+      <div class="container">
+        <div class="slider swiper banner-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="slider-item">
+                <div class="slider-item__content">
+                  <div class="slider-item__date">
+                    с 6 сентября по 15 сентября
+                  </div>
+                  <h1 class="slider-item__title">В самом расцвете кожуры!</h1>
+                  <div class="slider-item__text">
+                    Узнайте как бананы сохраняют свою свежесть после длительного
+                    путешествия из тропиков в Россию
+                  </div>
+                  <a href="#" class="slider-item__button">Подробнее</a>
+                </div>
+                <div class="slider-item__image">
+                  <span class="slider-item__label">
+                    <span class="slider-item__label-old"> 399 ₽ </span>
+                    239 ₽
+                  </span>
+                  <img src="./assets/img/svg/slider/banana.svg" alt="Banana" />
+                </div>
+              </div>
+            </div>
 
-</body>
+            <div class="swiper-slide">
+              <div class="slider-item">
+                <div class="slider-item__content">
+                  <div class="slider-item__date">
+                    с 6 сентября по 15 сентября
+                  </div>
+                  <h1 class="slider-item__title">В самом расцвете кожуры!</h1>
+                  <div class="slider-item__text">
+                    Узнайте как бананы сохраняют свою свежесть после длительного
+                    путешествия из тропиков в Россию
+                  </div>
+                  <a href="#" class="slider-item__button">Подробнее</a>
+                </div>
+                <div class="slider-item__image">
+                  <span class="slider-item__label">
+                    <span class="slider-item__label-old"> 399 ₽ </span>
+                    239 ₽
+                  </span>
+                  <img src="./assets/img/svg/slider/banana.svg" alt="Banana" />
+                </div>
+              </div>
+            </div>
 
+            <div class="swiper-slide">
+              <div class="slider-item">
+                <div class="slider-item__content">
+                  <div class="slider-item__date">
+                    с 6 сентября по 15 сентября
+                  </div>
+                  <h1 class="slider-item__title">В самом расцвете кожуры!</h1>
+                  <div class="slider-item__text">
+                    Узнайте как бананы сохраняют свою свежесть после длительного
+                    путешествия из тропиков в Россию
+                  </div>
+                  <a href="#" class="slider-item__button">Подробнее</a>
+                </div>
+                <div class="slider-item__image">
+                  <span class="slider-item__label">
+                    <span class="slider-item__label-old"> 399 ₽ </span>
+                    239 ₽
+                  </span>
+                  <img src="./assets/img/svg/slider/banana.svg" alt="Banana" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next">
+            <svg viewBox="0 0 48 48">
+              <circle cx="24" cy="24" r="20"></circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="loyal-section" id="about">
+      <div class="container">
+        <div class="loyal">
+          <div class="loyal-item">
+            <div class="loyal-item__description">О программе лояльности</div>
+          </div>
+          <div class="loyal-item">
+            <div class="loyal-item__content">
+              <h2 class="loyal-item__title">
+                Больше покупаешь, больше премии получаешь!
+              </h2>
+            </div>
+            <div class="loyal-item__image">
+              <img src="./assets/img/svg/loyal/exchange.svg" alt="exchange" />
+            </div>
+          </div>
+
+          <div class="loyal-item">
+            <div class="loyal-item__content-card">
+              <div class="loyal-item__card-1">
+                <div class="loyal-item__card-container">
+                  <div class="loyal-item__card-icon">
+                    <img src="./assets/img/svg/loyal/1.svg" />
+                  </div>
+                  <div class="loyal-item__card-title">Просто так</div>
+                </div>
+                <div class="loyal-item__card-container">
+                  <div class="loyal-item__card-description">
+                    С первой покупки
+                  </div>
+                </div>
+              </div>
+
+              <div class="loyal-item__card-2">
+                <div class="loyal-item__card-container">
+                  <div class="loyal-item__card-icon">
+                    <img src="./assets/img/svg/loyal/2.svg" />
+                  </div>
+                  <div class="loyal-item__card-title">Для друзей</div>
+                </div>
+                <div class="loyal-item__card-container">
+                  <div class="loyal-item__card-description">
+                    от 3 000
+                    <img src="./assets/img/svg/loyal/ruble.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="loyal-item__card-3">
+                <div class="loyal-item__card-container">
+                  <div class="loyal-item__card-icon">
+                    <img src="./assets/img/svg/loyal/3.svg" />
+                  </div>
+                  <div class="loyal-item__card-title">С любовью</div>
+                </div>
+                <div class="loyal-item__card-container">
+                  <div class="loyal-item__card-description">
+                    от 7 000
+                    <img src="./assets/img/svg/loyal/ruble.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="loyal-footer">
+          <div class="loyal-footer__description">
+            Статусная система от суммы покупок в месяц
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-section" id="app">
+      <div class="container">
+        <div class="app">
+          <div class="app-item__content">
+            <h3 class="app-item__title">
+              Виртуальная карта в&nbsp;твоем телефоне
+            </h3>
+            <div class="app-item__text">Скачивай мобильное приложение</div>
+            <div class="app-item__buttons">
+              <a
+                href="https://apps.apple.com/ru/app/премия-программа-лояльности/id1490568015"
+              >
+                <img alt="" src="assets/img/svg/apps/logo-app-store.svg" />
+              </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.premialoyalty&pli=1&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+              >
+                <img alt="" src="assets/img/svg/apps/logo-google-play.svg" />
+              </a>
+              <a href="#">
+                <img alt="" src="assets/img/svg/apps/logo-app-gallery.svg" />
+              </a>
+            </div>
+          </div>
+          <div class="app-item__image">
+            <img src="./assets/img/mobile_qr.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-banner-section">
+      <div class="container-xl">
+        <div class="app-banner">
+          <div class="app-banner__text">Выбирай свой набор привилегий</div>
+        </div>
+        <img src="assets/img/phone.svg" class="app-banner__img" alt="" />
+      </div>
+    </section>
+
+    <section class="products-section" id="sales">
+      <div class="container">
+        <div class="products">
+          <div class="products-content">
+            <div class="swiper product-slider cards">
+              <div class="products-logo">
+                <img src="./assets/img/svg/logo/yar.svg" alt="" />
+              </div>
+
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="cards-item">
+                    <div class="cards-item__image">
+                      <div class="cards-item__badge">Скидка -13%</div>
+                      <img src="./assets/img/products/1.png" alt="" />
+                    </div>
+                    <div class="cards-item__title">
+                      Шоколад молочный Organic Chocolate с жареным кокосом 32%,
+                      100г Шоколад молочный Organic Chocolate с жареным кокосом
+                      32%, 100г
+                    </div>
+                    <div class="cards-item__old-price">219,99 ₽</div>
+                    <div class="cards-item__price">99,99 ₽</div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="cards-item">
+                    <div class="cards-item__image">
+                      <div class="cards-item__badge">Скидка -13%</div>
+                      <img src="./assets/img/products/1.png" alt="" />
+                    </div>
+                    <div class="cards-item__title">
+                      Шоколад молочный Organic Chocolate с жареным кокосом 32%,
+                      100г
+                    </div>
+                    <div class="cards-item__old-price">219,99 ₽</div>
+                    <div class="cards-item__price">99,99 ₽</div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="cards-item">
+                    <div class="cards-item__image">
+                      <div class="cards-item__badge">Скидка -13%</div>
+                      <img src="./assets/img/products/1.png" alt="" />
+                    </div>
+                    <div class="cards-item__title">
+                      Шоколад молочный Organic Chocolate с жареным кокосом 32%,
+                      100г
+                    </div>
+                    <div class="cards-item__old-price">219,99 ₽</div>
+                    <div class="cards-item__price">99,99 ₽</div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="cards-item">
+                    <div class="cards-item__image">
+                      <div class="cards-item__badge">Скидка -13%</div>
+                      <img src="./assets/img/products/1.png" alt="" />
+                    </div>
+                    <div class="cards-item__title">
+                      Шоколад молочный Organic Chocolate с жареным кокосом 32%,
+                      100г
+                    </div>
+                    <div class="cards-item__old-price">219,99 ₽</div>
+                    <div class="cards-item__price">99,99 ₽</div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="cards-item">
+                    <div class="cards-item__image">
+                      <div class="cards-item__badge">Скидка -13%</div>
+                      <img src="./assets/img/products/1.png" alt="" />
+                    </div>
+                    <div class="cards-item__title">
+                      Шоколад молочный Organic Chocolate с жареным кокосом 32%,
+                      100г
+                    </div>
+                    <div class="cards-item__old-price">219,99 ₽</div>
+                    <div class="cards-item__price">99,99 ₽</div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="cards-item">
+                    <div class="cards-item__image">
+                      <div class="cards-item__badge">Скидка -13%</div>
+                      <img src="./assets/img/products/1.png" alt="" />
+                    </div>
+                    <div class="cards-item__title">
+                      Шоколад молочный Organic Chocolate с жареным кокосом 32%,
+                      100г
+                    </div>
+                    <div class="cards-item__old-price">219,99 ₽</div>
+                    <div class="cards-item__price">99,99 ₽</div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-scrollbar"></div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="products">
+          <div class="products-content">
+            <div class="swiper product-slider cards">
+              <div class="products-logo">
+                <img src="./assets/img/svg/logo/baton.svg" alt="" />
+              </div>
+
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="cards-item">
+                    <div class="cards-item__image">
+                      <div class="cards-item__badge">Скидка -13%</div>
+                      <img src="./assets/img/products/1.png" alt="" />
+                    </div>
+                    <div class="cards-item__title">
+                      Шоколад молочный Organic Chocolate с жареным кокосом 32%,
+                      100г
+                    </div>
+                    <div class="cards-item__old-price">219,99 ₽</div>
+                    <div class="cards-item__price">99,99 ₽</div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="cards-item">
+                    <div class="cards-item__image">
+                      <div class="cards-item__badge">Скидка -13%</div>
+                      <img src="./assets/img/products/1.png" alt="" />
+                    </div>
+                    <div class="cards-item__title">
+                      Шоколад молочный Organic Chocolate с жареным кокосом 32%,
+                      100г Шоколад молочный Organic Chocolate с жареным кокосом
+                      32%, 100г
+                    </div>
+                    <div class="cards-item__old-price">219,99 ₽</div>
+                    <div class="cards-item__price">99,99 ₽</div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="cards-item">
+                    <div class="cards-item__image">
+                      <div class="cards-item__badge">Скидка -13%</div>
+                      <img src="./assets/img/products/1.png" alt="" />
+                    </div>
+                    <div class="cards-item__title">
+                      Шоколад молочный Organic Chocolate с жареным кокосом 32%,
+                      100г
+                    </div>
+                    <div class="cards-item__old-price">219,99 ₽</div>
+                    <div class="cards-item__price">99,99 ₽</div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="cards-item">
+                    <div class="cards-item__image">
+                      <div class="cards-item__badge">Скидка -13%</div>
+                      <img src="./assets/img/products/1.png" alt="" />
+                    </div>
+                    <div class="cards-item__title">
+                      Шоколад молочный Organic Chocolate с жареным кокосом 32%,
+                      100г
+                    </div>
+                    <div class="cards-item__old-price">219,99 ₽</div>
+                    <div class="cards-item__price">99,99 ₽</div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="cards-item">
+                    <div class="cards-item__image">
+                      <div class="cards-item__badge">Скидка -13%</div>
+                      <img src="./assets/img/products/1.png" alt="" />
+                    </div>
+                    <div class="cards-item__title">
+                      Шоколад молочный Organic Chocolate с жареным кокосом 32%,
+                      100г
+                    </div>
+                    <div class="cards-item__old-price">219,99 ₽</div>
+                    <div class="cards-item__price">99,99 ₽</div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="cards-item">
+                    <div class="cards-item__image">
+                      <div class="cards-item__badge">Скидка -13%</div>
+                      <img src="./assets/img/products/1.png" alt="" />
+                    </div>
+                    <div class="cards-item__title">
+                      Шоколад молочный Organic Chocolate с жареным кокосом 32%,
+                      100г
+                    </div>
+                    <div class="cards-item__old-price">219,99 ₽</div>
+                    <div class="cards-item__price">99,99 ₽</div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-scrollbar"></div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner-section">
+      <div class="container">
+        <div class="banner">
+          <div class="banner-content">
+            <div class="banner-text">
+              Сплочённость команды профессионалов бодрит
+            </div>
+            <a href="" class="banner-bottom">Подробнее</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="maps-section" id="shops">
+      <div class="container">
+        <div class="block-title">Магазины</div>
+      </div>
+      <div class="maps">
+        <div class="maps-content" id="map"></div>
+      </div>
+    </section>
+
+    <section class="questions-section" id="faq">
+      <div class="container">
+        <div class="block-title">Часто задаваемые вопросы</div>
+
+        <div class="tabs">
+          <div class="tabs__nav">
+            <button class="tabs__btn tabs__btn_active">
+              Программа лояльности
+            </button>
+            <button class="tabs__btn">Карта</button>
+            <button class="tabs__btn">Бонусы</button>
+            <button class="tabs__btn">Предложения</button>
+          </div>
+          <div class="tabs__content">
+            <div class="tabs__pane tabs__pane_show">
+              <div class="accordion" id="accordion-1">
+                <div class="accordion__item accordion__item_show">
+                  <div class="accordion__header">Пункт 1.1</div>
+                  <div class="accordion__body">
+                    <div class="accordion__content">Текст пункта</div>
+                  </div>
+                </div>
+                <div class="accordion__item">
+                  <div class="accordion__header">Пункт 1.2</div>
+                  <div class="accordion__body">
+                    <div class="accordion__content">Текст пункта</div>
+                  </div>
+                </div>
+                <div class="accordion__item">
+                  <div class="accordion__header">Пункт 1.3</div>
+                  <div class="accordion__body">
+                    <div class="accordion__content">Текст пункта</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tabs__pane">
+              <div class="accordion" id="accordion-2">
+                <div class="accordion__item accordion__item_show">
+                  <div class="accordion__header">Пункт 2.1</div>
+                  <div class="accordion__body">
+                    <div class="accordion__content">Текст пункта</div>
+                  </div>
+                </div>
+                <div class="accordion__item">
+                  <div class="accordion__header">Пункт 2.2</div>
+                  <div class="accordion__body">
+                    <div class="accordion__content">Текст пункта</div>
+                  </div>
+                </div>
+                <div class="accordion__item">
+                  <div class="accordion__header">Пункт 2.3</div>
+                  <div class="accordion__body">
+                    <div class="accordion__content">Текст пункта</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tabs__pane">
+              <div class="accordion" id="accordion-3">
+                <div class="accordion__item accordion__item_show">
+                  <div class="accordion__header">Пункт 3.1</div>
+                  <div class="accordion__body">
+                    <div class="accordion__content">Текст пункта</div>
+                  </div>
+                </div>
+                <div class="accordion__item">
+                  <div class="accordion__header">Пункт 3.2</div>
+                  <div class="accordion__body">
+                    <div class="accordion__content">Текст пункта</div>
+                  </div>
+                </div>
+                <div class="accordion__item">
+                  <div class="accordion__header">Пункт 3.3</div>
+                  <div class="accordion__body">
+                    <div class="accordion__content">Текст пункта</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tabs__pane">
+              <div class="accordion" id="accordion-4">
+                <div class="accordion__item accordion__item_show">
+                  <div class="accordion__header">Пункт 4.1</div>
+                  <div class="accordion__body">
+                    <div class="accordion__content">Текст пункта</div>
+                  </div>
+                </div>
+                <div class="accordion__item">
+                  <div class="accordion__header">Пункт 4.2</div>
+                  <div class="accordion__body">
+                    <div class="accordion__content">Текст пункта</div>
+                  </div>
+                </div>
+                <div class="accordion__item">
+                  <div class="accordion__header">Пункт 4.3</div>
+                  <div class="accordion__body">
+                    <div class="accordion__content">Текст пункта</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <hr class="divider" />
+    </div>
+
+    <section class="info-section">
+      <div class="container">
+        <div class="info">
+          <div class="info-content">
+            <img
+              src="assets/img/svg/logo/logo-dark.svg"
+              class="info__logo"
+              alt=""
+            />
+            <p class="info-text__description">Служба поддержки</p>
+            <div class="info-text__phone">8-800-775-89-50</div>
+            <div class="info-menu">
+              <a href="#" class="info-menu__link"
+                >Правила участия в программе лояльности</a
+              >
+              <a href="#" class="info-menu__link"
+                >Политика конфиденциальности</a
+              >
+              <a href="#" class="info-menu__link"
+                >Пользовательское соглашение</a
+              >
+            </div>
+          </div>
+          <div class="info-content">
+            <div class="info-columns">
+              <div class="info-column__item">
+                <img
+                  src="assets/img/svg/logo/yar.svg"
+                  class="info-column__item-logo"
+                  alt=""
+                />
+                <div class="socials">
+                  <ul class="social-content">
+                    <li>
+                      <a href="">
+                        <img src="assets/img/svg/social/tg.svg" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <img src="assets/img/svg/social/vk.svg" />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="info-column__item">
+                <img
+                  src="assets/img/svg/logo/baton.svg"
+                  class="info-column__item-logo"
+                  alt=""
+                />
+                <div class="socials">
+                  <ul class="social-content">
+                    <li>
+                      <a href="">
+                        <img src="assets/img/svg/social/tg.svg" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <img src="assets/img/svg/social/vk.svg" />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="info-title">Наше приложение</div>
+            <p class="info-description">
+              Всегда под рукой: акции, поиск ближайшего магазина, связь с нами и
+              виртуальная карта лояльности.
+            </p>
+            <div class="info-app__buttons">
+              <a href="#">
+                <img alt="" src="assets/img/svg/apps/logo-app-store.svg" />
+              </a>
+              <a href="#">
+                <img alt="" src="assets/img/svg/apps/logo-google-play.svg" />
+              </a>
+              <a href="#">
+                <img alt="" src="assets/img/svg/apps/logo-app-gallery.svg" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-content__item">
+            <div class="footer-copyright">
+              © Официальный сайт программы лояльности «Премия»
+            </div>
+          </div>
+          <div class="footer-content__item">
+            <a class="footer-link">
+              Следим за ценами с
+              <img src="assets/img/svg/logo/5uglov.svg" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <template id="registration">
+      <section class="popUp registration">
+        <div class="popUp__overlay registration__overlay"></div>
+        <section class="popUp__container registration__container">
+          <button class="popUp__close registration__close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M15.59 7L12 10.59L8.41 7L7 8.41L10.59 12L7 15.59L8.41 17L12 13.41L15.59 17L17 15.59L13.41 12L17 8.41L15.59 7Z"
+                fill="#8D929A"
+              />
+            </svg>
+          </button>
+
+          <h2 class="registration__header">Регистрация</h2>
+
+          <form class="registration__form" id="registration__form">
+            <div class="validator__field">
+              <p class="validator__description">Телефон <span>*</span></p>
+              <input
+                class="validator__input validator__phone"
+                type="tel"
+                inputmode="tel"
+                autocomplete="off"
+                data-bouncer-target="#phone1"
+                placeholder="+7 000 000-00-00"
+                name="phone"
+              />
+            </div>
+
+            <div class="validator__field">
+              <p class="validator__description">
+                Номер карты «Премия» <span>*</span>
+              </p>
+              <input
+                class="validator__input validator__number"
+                type="text"
+                inputmode="decimal"
+                placeholder="1234567"
+                data-bouncer-target="#target8"
+                name="card"
+              />
+            </div>
+
+            <div class="validator__field">
+              <p class="validator__description">ФИО</p>
+              <input
+                class="validator__input"
+                type="text"
+                placeholder="Введите ФИО"
+                data-bouncer-target="#target1"
+                name="fio"
+              />
+            </div>
+
+            <div class="validator__field">
+              <p class="validator__description">Дата рождения</p>
+              <input
+                class="validator__input registration__dateOfBirth"
+                type="text"
+                inputmode="decimal"
+                placeholder="ДД.ММ.ГГГГ"
+                data-bouncer-target="#target88"
+                name="birthDate"
+              />
+            </div>
+
+            <div class="validator__field validator__field--select">
+              <p class="validator__description">Пол</p>
+              <select name="gender" class="registration__gender">
+                <option value="">Выберите пол</option>
+                <option value="male">Мужской</option>
+                <option value="female">Женский</option>
+              </select>
+            </div>
+
+            <div class="validator__field validator__field--checkbox">
+              <input class="validator__agree" id="robot" type="checkbox" />
+              <label class="validator__legal" for="robot"
+                ><p class="registration__robot"><span>Я</span> не робот</p>
+              </label>
+            </div>
+
+            <div class="registration__buttons">
+              <button
+                class="popUp__close registration__action registration__action--cancel"
+                type="button"
+              >
+                Отменить
+              </button>
+              <button
+                class="registration__action registration__action--submit validator__submit--disabled"
+                type="submit"
+                disabled
+              >
+                Зарегистрироваться
+              </button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </template>
+
+    <template id="request">
+      <section class="popUp request">
+        <section class="popUp__container request__container">
+          <p class="request__text">
+            Ваш запрос на регистрацию отправлен на модерацию.
+          </p>
+
+          <button class="popUp__close request__close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M15.59 7L12 10.59L8.41 7L7 8.41L10.59 12L7 15.59L8.41 17L12 13.41L15.59 17L17 15.59L13.41 12L17 8.41L15.59 7Z"
+                fill="#8D929A"
+              />
+            </svg>
+          </button>
+        </section>
+      </section>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="./assets/js/inputmask.js"></script>
+    <script src="./assets/js/bouncer.polyfills.js"></script>
+    <script src="./assets/js/bouncer.js"></script>
+    <script src="./assets/js/choices.js"></script>
+
+    <script src="./assets/js/sliders.js"></script>
+    <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/maps.js"></script>
+    <script src="./assets/js/tabs.js"></script>
+    <script src="./assets/js/accordion.js"></script>
+    <script src="./assets/js/validator.js"></script>
+    <script src="./assets/js/popUp.js"></script>
+  </body>
 </html>
